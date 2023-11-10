@@ -6,7 +6,6 @@ print(3+1)
 fp = open('/Users/baima/Desktop/newWorld.txt', 'a+');
 print('helloworld', file=fp)
 fp.close()
-
 #所有输出在单行里
 print('hello', 'world', 'python')
 
