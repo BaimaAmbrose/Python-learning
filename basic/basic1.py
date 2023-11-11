@@ -269,11 +269,12 @@ for num in range(100, 1000):
 # 370
 # 371
 # 407
+# 代码所求的是每个位数的三次方结果相加等于这个数
 #-----------------------------------------
 for item in range(100, 1000):
     ge = item % 10
     shi = item // 10 % 10
-    bai = item // 100
+    bai = item // 100  # 这里的//是不可以写成/的，如果写成/会不是整数。//的含义是向下取整
     sumNum = ge ** 3 + shi ** 3 + bai ** 3
     if item == sumNum:
         print(item)
