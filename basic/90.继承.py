@@ -52,3 +52,42 @@ son.showA()
 print(f"姓名是{son.name}，年纪是{son.age}，性别是{son.gender}")
 # 这里调用的是name和age，而不是name1和age1，因为name1和age1是传入的值
 # 所以调用的函数名称应该是和父类里一样的
+
+#——————————————————————————————————————————————————————————————————————————
+
+## 父类方法的重写
+class Person():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def show(self):
+        print(f"名字是{self.name}，年纪是{self.age}")
+
+
+class Student(Person):
+    def __init__(self, name, age, stuno):
+        super().__init__(name, age)
+        self.stuno = stuno
+
+    # 改写父类里的数据
+    def show(self):
+        super().show()
+        print(f"学号是{self.stuno}")
+
+
+class Doctor(Person):
+    def __init__(self, name, age, department):
+        super().__init__(name, age)
+        self.department = department
+
+    def show(self):
+        print(f"名字是{self.name}，年纪是{self.age}，我的部门是{self.department}")
+
+
+stu = Student("lisa", 12, 124123)
+stu.show()
+
+stu2 = Doctor("doctor", 32, "笑话")
+stu2.show()
+
