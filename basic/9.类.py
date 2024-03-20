@@ -77,3 +77,29 @@ print(car._Car__color)
 car._Car__def2()
 
 #————————————————————————————————————————————————————————————
+
+class Student():
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age
+
+    @property # 使其在外部可以调用
+    def age(self):
+        return self.__age
+
+    @age.setter # setter方法使其可以在外部进行修改
+    def age(self,value):
+        if value> 100 or value < 0:
+            print("the age is wrong")
+        else:
+            self.__age =value
+
+
+stu = Student("asd", 123)
+print(stu.name, ",her age is", stu.age)
+stu.age = 21
+print(stu.name, ",her age is", stu.age)
+
+
+#————————————————————————————————————————————————————————————
+
