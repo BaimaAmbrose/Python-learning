@@ -43,3 +43,37 @@ def show():
 
 stu1.show = show() # 将show函数变成stu1专属的方法
 stu1.show
+
+#-----------------------------------------------------------
+# 私有的类
+
+class Car():
+    def __init__(self, brand, color, size):
+        self._brand = brand  # 受到保护，只能本类和子类去使用
+        self.__color = color  # 受到限制，只能本类去使用
+        self.size = size  # 全都可以使用
+
+    def _def1(self):
+        print("子类和本身可以使用")
+
+    def __def2(self):
+        print("只有本身可以使用")
+
+    def def3(self):
+        self._def1()
+        self.__def2()
+        print(self._brand)
+        print(self.__color)
+
+
+car = Car("BYD", "red", "15")
+car.def3()
+print(car._brand) # 这里可以输出
+print(car.__color)  # 这里会报错，出了类的定义范围就无法使用
+car._def1() # 这里可以输出
+car._def2() # 这里会报错
+# 如果想要访问，需要按照一下的样式来写
+print(car._Car__color)
+car._Car__def2()
+
+#————————————————————————————————————————————————————————————
