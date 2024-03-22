@@ -115,3 +115,17 @@ def fun(obj):
 
 cat = Cat()
 fun(cat)
+
+#--------------------------------------------------------------------
+
+## 重写str方法，使得在per调用这个函数的时候，输出的不再是地址，而是改写后的str方法
+class Person():
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return "我让你返回这个"
+
+per= Person("lilie",123)
+print(per)
