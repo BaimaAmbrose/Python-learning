@@ -91,3 +91,27 @@ stu.show()
 stu2 = Doctor("doctor", 32, "笑话")
 stu2.show()
 
+#--------------------------------------------------------------------
+
+## 多态
+class Person():
+    def eat(self):
+        print("eat food")
+
+
+class Cat():
+    def eat(self):
+        print("eat fish")
+
+
+class Dog():
+    def eat(self):
+        print("eat shit")
+
+
+def fun(obj):
+    obj.eat()
+
+
+cat = Cat()
+fun(cat)
