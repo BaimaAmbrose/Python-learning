@@ -129,3 +129,22 @@ class Person():
 
 per= Person("lilie",123)
 print(per)
+
+#--------------------------------------------------------------------
+
+class Circle():
+    def __init__(self, r):
+        self.r = r
+
+    def ger_area(self):
+        return 3.14*pow(self.r,2)
+
+    def get_permeter(self):
+        return 2 * 3.14 * self.r
+
+
+num = eval(input("input the r"))
+cir = Circle(num)
+print(f"area is {cir.ger_area()}")
+print(f"permeter is {cir.get_permeter()}")
+
